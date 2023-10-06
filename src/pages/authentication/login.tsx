@@ -1,9 +1,15 @@
-import { useState } from "react";
-import { fbLogin } from "../../config/firebase/firebase-methods";
+import { useEffect, useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
+import { fbAuth, fbLogin } from "../../config/firebase/firebase-methods";
+import SMInput from "../../components/SMInput";
+import SMButton from "../../components/SMButton";
+// import {useDispatch} from 'react-redux'
+
 
 export default function Login() {
   const [model, setModel] = useState<any>({});
+//   const  dispatch = useDispatch();
 
   const fillModel = (key: string, val: any) => {
     model[key] = val;
@@ -14,15 +20,24 @@ export default function Login() {
   let LoginUser = () => {
     console.log(model);
     fbLogin(model)
-      .then((res) => {
+      .then((res: any) => {
         console.log(res);
-        navigate("/")
+        // dispatch(add({...res}))
+
+        navigate("/student")
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+useEffect(()=>{
+fbAuth().then((res) =>{
+console.log(res);
+}).catch((err)=>{
+  console.log(err)
+})
+},[])
   return (
     <>
       <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-screen flex justify-center items-center">
@@ -32,21 +47,21 @@ export default function Login() {
           </div>
 
           <div className="m-2">
-            {/* <SMInput
+            <SMInput
               value={model.email}
               onChange={(e: any) => fillModel("email", e.target.value)}
               label="Email"
-            /> */}
+            />
           </div>
           <div className="m-2">
-            {/* <SMInput
+            <SMInput
               value={model.password}
               onChange={(e: any) => fillModel("password", e.target.value)}
               label="Password"
-            /> */}
+            />
           </div>
           <div className="m-2">
-            {/* <SMButton onClick={LoginUser} label="Login" /> */}
+            <SMButton onClick={LoginUser} label="Login" />
           </div>
           <div className="m-2">
         <p>If you haven't registered yet?<Link to="/signup">SignUp</Link></p>

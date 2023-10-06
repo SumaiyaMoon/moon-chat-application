@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import { fbSignUp } from "../../config/firebase/firebase-methods";
-
+import SMInput from "../../components/SMInput";
+import SMButton from "../../components/SMButton";
 
 export default function SignUp() {
   const [model, setModel] = useState<any>({});
@@ -31,28 +33,28 @@ export default function SignUp() {
             <h1 className="text-3xl font-medium p-2">Sign Up</h1>
           </div>
           <div className="m-2">
-            {/* <SMInput
+            <SMInput
               value={model.userName}
               onChange={(e: any) => fillModel("userName", e.target.value)}
               label="User Name"
-            /> */}
+            />
           </div>
           <div className="m-2">
-            {/* <SMInput
+            <SMInput
               value={model.email}
               onChange={(e: any) => fillModel("email", e.target.value)}
               label="Email"
-            /> */}
+            />
           </div>
           <div className="m-2">
-            {/* <SMInput
+            <SMInput
               value={model.password}
               onChange={(e: any) => fillModel("password", e.target.value)}
               label="Password"
-            /> */}
+            />
           </div>
           <div className="m-2">
-            {/* <SMButton onClick={signUpUser} label="Sign Up" /> */}
+            <SMButton onClick={signUpUser} label="Sign Up" />
           </div>
           <div className="m-2">
             <p>
