@@ -1,10 +1,15 @@
 .bg_img_login{
-  /* background-color: rgba(0, 255, 255, 0.395); */
-  background-image: url(../src/assets/login.jpg);
+  background-image: url(../src/assets/bg_img.jpg);
   background-size: cover;
+  background-position: center;
   height: 100vh;
  }
  .paperColor{
-     background-color: rgba(141, 173, 234, 0.329) !important;
+     background-color: white !important;
  }
- 
+ .bg_img_home{
+  background-image: url(../src/assets/bg_img.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+ }

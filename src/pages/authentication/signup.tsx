@@ -48,6 +48,7 @@ export default function SignUp() {
                 label="User Name"
                 type="text"
                 onChange={(e: any) => fillModel("username", e.target.value)}
+                className="py-2"
               />
               <SMInput
                 value={model.email}
@@ -55,6 +56,7 @@ export default function SignUp() {
                 label="Email"
                 type="email"
                 onChange={(e: any) => fillModel("email", e.target.value)}
+                className="py-2"
               />
             </Grid>
 
@@ -65,6 +67,7 @@ export default function SignUp() {
                 label="Password"
                 type="password"
                 onChange={(e: any) => fillModel("password", e.target.value)}
+                className="py-2"
               />
             </Grid>
             <Grid item xs={12}>
@@ -72,6 +75,7 @@ export default function SignUp() {
                 name="password"
                 label="Confirm Password"
                 type="password"
+                className="py-2"
               />
             </Grid>
             <Grid
@@ -83,9 +87,10 @@ export default function SignUp() {
                 type="button"
                 label="SignUp"
                 onClick={signUpUser}
+                className="py-2"
               />
-              <Typography>
-                Already Signed Up? <Link to="/Login" className="text-light">Login</Link>
+              <Typography className="py-2">
+                Already Signed Up? <Link to="/Login" >Login</Link>
               </Typography>
             </Grid>
           </Grid>

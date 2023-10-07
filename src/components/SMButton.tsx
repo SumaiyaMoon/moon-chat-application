@@ -6,10 +6,11 @@ type SMButtonProps = {
   onClick?: () => void;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
+  className?: string;
 };
 
 export default function SMButton(props: SMButtonProps) {
-  const { label, onClick, disabled, type } = props;
+  const { label, onClick, disabled, type, className } = props;
 
   return (
     <Button
@@ -18,6 +19,7 @@ export default function SMButton(props: SMButtonProps) {
       onClick={onClick}
       disabled={disabled}
       type={type || 'button'} 
+      className={className}
     >
       {label}
     </Button>

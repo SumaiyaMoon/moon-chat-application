@@ -7,10 +7,11 @@ type SMInputProps = {
   type?: string;
   value?: string;
   name?: string;
+  className?: string;
 };
 
 export default function SMInput(props: SMInputProps) {
-  const { label, onChange, type, value, name } = props;
+  const { label, onChange, type, value, name, className } = props;
 
   return (
     <div>
@@ -23,6 +24,7 @@ export default function SMInput(props: SMInputProps) {
         name={name}
         id={name}
         fullWidth
+        className={className}
       />
     </div>
   );

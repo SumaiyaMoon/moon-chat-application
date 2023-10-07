@@ -63,6 +63,7 @@ console.log(res);
               label="Email"
               type="email"
               onChange={(e: any) => fillModel("email", e.target.value)}
+              className="py-2"
             />
           </Grid>
           <Grid item xs={12}>
@@ -72,6 +73,7 @@ console.log(res);
               label="Password"
               type="password"
               onChange={(e: any) => fillModel("password", e.target.value)}
+              className="py-2"
             />
           </Grid>
           <Grid item xs={12}>
@@ -79,10 +81,11 @@ console.log(res);
               type="button"
               onClick={LoginUser}
               label="Login"
+              className="py-2"
             />
-            <Typography>
-              Don't have an account?{" "}
-              <Link to="/SignUp" className="text-light">
+            <Typography className="py-2">
+              Don't have an account?
+              <Link to="/SignUp" >
                 SingUp
               </Link>
             </Typography>
