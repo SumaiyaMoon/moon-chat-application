@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { fbAuth, fbLogin } from "../../config/firebase/firebase-methods";
 import SMInput from "../../components/SMInput";
 import SMButton from "../../components/SMButton";
+import { Typography, Box, Paper, Grid } from "@mui/material";
+
 // import {useDispatch} from 'react-redux'
 
 
@@ -39,35 +41,55 @@ console.log(res);
 })
 },[])
   return (
-    <>
-      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-screen flex justify-center items-center">
-        <div className="w-[500px] bg-[rgba(255,255,255,.2)] p-10 rounded-lg">
-          <div className="py-5">
-            <h1 className="text-3xl font-medium">Login</h1>
-          </div>
-
-          <div className="m-2">
+    <Box
+    className="bg_img_login"
+    sx={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+    }}
+  >
+    <Paper className="paperColor" elevation={3} sx={{ p: 4, maxWidth: 400 }}>
+      <Typography variant="h6" className="fw-bold" gutterBottom>
+        Login
+      </Typography>
+      <form>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
             <SMInput
               value={model.email}
-              onChange={(e: any) => fillModel("email", e.target.value)}
+              name="email"
               label="Email"
+              type="email"
+              onChange={(e: any) => fillModel("email", e.target.value)}
             />
-          </div>
-          <div className="m-2">
+          </Grid>
+          <Grid item xs={12}>
             <SMInput
               value={model.password}
-              onChange={(e: any) => fillModel("password", e.target.value)}
+              name="password"
               label="Password"
+              type="password"
+              onChange={(e: any) => fillModel("password", e.target.value)}
             />
-          </div>
-          <div className="m-2">
-            <SMButton onClick={LoginUser} label="Login" />
-          </div>
-          <div className="m-2">
-        <p>If you haven't registered yet?<Link to="/signup">SignUp</Link></p>
-          </div>
-        </div>
-      </div>
-    </>
+          </Grid>
+          <Grid item xs={12}>
+            <SMButton
+              type="button"
+              onClick={LoginUser}
+              label="Login"
+            />
+            <Typography>
+              Don't have an account?{" "}
+              <Link to="/SignUp" className="text-light">
+                SingUp
+              </Link>
+            </Typography>
+          </Grid>
+        </Grid>
+      </form>
+    </Paper>
+  </Box>
   );
 }

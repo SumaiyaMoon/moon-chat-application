@@ -1,9 +1,9 @@
 import { useState } from "react";
-
 import { Link, useNavigate } from "react-router-dom";
 import { fbSignUp } from "../../config/firebase/firebase-methods";
 import SMInput from "../../components/SMInput";
 import SMButton from "../../components/SMButton";
+import { Box, Typography, Paper, Grid } from "@mui/material";
 
 export default function SignUp() {
   const [model, setModel] = useState<any>({});
@@ -26,43 +26,71 @@ export default function SignUp() {
   };
 
   return (
-    <>
-      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-screen flex justify-center items-center">
-        <div className="w-[500px] bg-[rgba(255,255,255,.2)] p-10 rounded-lg">
-          <div className="">
-            <h1 className="text-3xl font-medium p-2">Sign Up</h1>
-          </div>
-          <div className="m-2">
-            <SMInput
-              value={model.userName}
-              onChange={(e: any) => fillModel("userName", e.target.value)}
-              label="User Name"
-            />
-          </div>
-          <div className="m-2">
-            <SMInput
-              value={model.email}
-              onChange={(e: any) => fillModel("email", e.target.value)}
-              label="Email"
-            />
-          </div>
-          <div className="m-2">
-            <SMInput
-              value={model.password}
-              onChange={(e: any) => fillModel("password", e.target.value)}
-              label="Password"
-            />
-          </div>
-          <div className="m-2">
-            <SMButton onClick={signUpUser} label="Sign Up" />
-          </div>
-          <div className="m-2">
-            <p>
-              Already Registered? <Link to="/login">Login</Link>
-            </p>
-          </div>
-        </div>
-      </div>
-    </>
+ <Box
+      className="bg_img_login"
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <Paper className="paperColor" elevation={3} sx={{ p: 3, maxWidth: 400 }}>
+        <Typography variant="h6" className="fw-bold" gutterBottom>
+          SignUp
+        </Typography>
+        <form>
+          <Grid container spacing={1}>
+            <Grid item xs={12}>
+              <SMInput
+                value={model.username}
+                name="username"
+                label="User Name"
+                type="text"
+                onChange={(e: any) => fillModel("username", e.target.value)}
+              />
+              <SMInput
+                value={model.email}
+                name="email"
+                label="Email"
+                type="email"
+                onChange={(e: any) => fillModel("email", e.target.value)}
+              />
+            </Grid>
+
+            <Grid item xs={12}>
+              <SMInput
+                value={model.password}
+                name="password"
+                label="Password"
+                type="password"
+                onChange={(e: any) => fillModel("password", e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <SMInput
+                name="password"
+                label="Confirm Password"
+                type="password"
+              />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              className="d-flex justigy-content-between align-items-center gap-5"
+            >
+              <SMButton
+                type="button"
+                label="SignUp"
+                onClick={signUpUser}
+              />
+              <Typography>
+                Already Signed Up? <Link to="/Login" className="text-light">Login</Link>
+              </Typography>
+            </Grid>
+          </Grid>
+        </form>
+      </Paper>
+    </Box>
   );
 }

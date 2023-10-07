@@ -6,6 +6,7 @@ import PersonalChat from "../../pages/chat-box/personalchat";
 import Home from "../../pages/home";
 import Login from "../../pages/authentication/login";
 import SignUp from "../../pages/authentication/signup";
+import NotFound from "../../pages/NotFound";
 
 
 export default function AppRouter() {
@@ -18,6 +19,7 @@ export default function AppRouter() {
            <Route path="/" element={<Home/>} />
            <Route path="login" element={<Login/>} />
            <Route path="signup" element={<SignUp/>} />
+           <Route path="*" element={<NotFound/>} />
         </Routes>
       </Router>
     </>
