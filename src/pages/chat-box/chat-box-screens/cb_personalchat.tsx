@@ -1,6 +1,6 @@
 import { Typography, Paper, Divider } from "@mui/material";
 
-export default function CB_PersonalChat(){
+export default function CBPersonalChat(){
 return(
     <>
     <Typography>Chat App - PersonalChat</Typography>

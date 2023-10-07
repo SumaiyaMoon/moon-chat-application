@@ -25,10 +25,10 @@ import { fbAdd, fbGet } from '../../config/firebase/firebase-methods';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import SMButton from '../../components/SMButton';
 import { Paper } from '@mui/material';
-import CB_MainChat from './chat-box-screens/cb_mainchat';
-import CB_PersonalChat from './chat-box-screens/cb_personalchat';
-import CB_Settings from './chat-box-screens/cb_settings';
-import CB_Other from './chat-box-screens/cb_other';
+import CBMainChat from './chat-box-screens/cb_mainchat';
+import CBPersonalChat from './chat-box-screens/cb_personalchat';
+import CBSettings from './chat-box-screens/cb_settings';
+import CBOther from './chat-box-screens/cb_other';
 
 
 
@@ -232,10 +232,10 @@ export default function ChatBox() {
 
 
              <Routes>
-          <Route path="mainchat" element={<CB_MainChat />} />
-          <Route path="personalchat" element={<CB_PersonalChat />} />
-          <Route path="settings" element={<CB_Settings />} />
-          <Route path="other" element={<CB_Other />} />
+          <Route path="mainchat" element={<CBMainChat />} />
+          <Route path="personalchat" element={<CBPersonalChat />} />
+          <Route path="settings" element={<CBSettings />} />
+          <Route path="other" element={<CBOther />} />
         </Routes>
 
       </Box>

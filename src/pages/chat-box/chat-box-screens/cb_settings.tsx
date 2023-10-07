@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 
-export default function CB_Settings(){
+export default function CBSettings(){
 return(
     <>
     <Typography>Chat App - Settings</Typography>
