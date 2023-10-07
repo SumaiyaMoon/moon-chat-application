@@ -18,7 +18,7 @@ export default function SignUp() {
     console.log(model);
     fbSignUp(model)
       .then((res) => {
-        navigate("/login");
+        navigate("/chatbox");
       })
       .catch((err) => {
         console.log(err);

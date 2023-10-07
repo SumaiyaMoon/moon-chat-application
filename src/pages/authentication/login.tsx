@@ -26,7 +26,7 @@ export default function Login() {
         console.log(res);
         // dispatch(add({...res}))
 
-        navigate("/student")
+        navigate("/chatbox")
       })
       .catch((err) => {
         console.log(err);
